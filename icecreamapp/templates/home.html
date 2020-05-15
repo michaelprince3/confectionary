@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="header">
+<h1>Ice Cream App</h1>
+</div>
+
+<div class="list-container">
+    <ol>
+    {% for variety in varieties %}
+        <li>
+            <p>{{ variety.name}}</p>
+        </li>
+    {% endfor %}
+    </ol>
+</div>
+
+
+
+{% endblock %}
