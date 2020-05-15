@@ -10,7 +10,7 @@
     <ol>
     {% for variety in varieties %}
         <li>
-            <p>{{ variety.name}}</p>
+            <p><a href="{% url 'icecreamapp:detail' variety.id %}">{{ variety.name}}</a></p>
         </li>
     {% endfor %}
     </ol>

@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class='header'>
+<h1>{{ variety.name }}</h1>
+</div>
+
+<div class="list-container">
+
+        
+        
+        
+        <p>Flavors: </p>
+                <ol>
+                        {% comment %} {% for employee in employees %}
+                        <li>
+                        {{ employee.first_name }} {{ employee.last_name }}
+                        </li> 
+                        {% endfor %}       {% endcomment %}
+                </ol>
+<div class="list-container">
+{% endblock content %}
