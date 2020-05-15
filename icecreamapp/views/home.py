@@ -39,3 +39,19 @@ def home(request):
 
         return render(request, template, context)
 
+    elif request.method == 'POST':
+        form_data = request.POST
+        
+        with sqlite3.connect(Connection.db_path) as conn:
+            db_cursor = conn.cursor()
+            
+            db_cursor.execute("""
+            INSERT INTO icecreamapp_variety
+            (
+                name, country_of_origin
+            )
+            VALUES (?, ?)
+            """,
+            (form_data['name'], form_data['country']))
+            
+        return redirect(reverse('icecreamapp:home'))

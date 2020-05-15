@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="header">
+    <h1 class="text-center">Add Variety</h1>
+</div>
+
+<div class="variety-form">
+
+        <form action="{% url 'icecreamapp:home' %}" method="POST" class="new_form">
+
+        {% csrf_token %}
+        <fieldset class="new_form">
+            <label for="name" class="new_form">Variety Name: </label>
+            <input id="name" type="text" name="name" value="{{ variety.name }}" class="new_form">
+        </fieldset>
+        <fieldset class="new_form">
+            <label for="country" class="new_form">Country of Origin: </label>
+            <input id="country" class="new_form" type="text" name="country" value="{{ variety.country_of_origin }}">
+        </fieldset>
+
+        <input type="submit" value="Create" class="new_form"/>
+    </form>
+
+</div>
+{% endblock %}
